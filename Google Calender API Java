@@ -1,0 +1,48 @@
+ //Show events on user's calendar.
+  View.header("Show Calendars");
+  CalendarList feed = client.calendarList().list().execute();
+  View.display(feed);
+  
+  /** Authorizes the installed application to access user's protected data. */
+  private static Credential authorize() throws Exception {
+    // load client secrets
+    GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
+        new InputStreamReader(CalendarSample.class.getResourceAsStream("/client_secrets.json")));
+    // set up authorization code flow
+    GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
+        httpTransport, JSON_FACTORY, clientSecrets,
+        Collections.singleton(CalendarScopes.CALENDAR)).setDataStoreFactory(dataStoreFactory)
+        .build();
+    // authorize
+    return new AuthorizationCodeInstalledApp(flow, new LocalServerReceiver()).authorize("user");
+  }
+  
+  
+  // to make the program work on Google app platform
+  @Override
+  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    AppIdentityCredential credential =
+        new AppIdentityCredential(Arrays.asList(UrlshortenerScopes.URLSHORTENER));
+    Urlshortener shortener =
+        new Urlshortener.Builder(new UrlFetchTransport(), new JacksonFactory(), credential)
+        .build();
+    UrlHistory history = shortener.URL().list().execute();
+    ...
+  }
+  // to make it work on Android 1.5 or higher 
+    @Override
+  public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    // Google Accounts
+    credential =
+        GoogleAccountCredential.usingOAuth2(this, Collections.singleton(TasksScopes.TASKS));
+    SharedPreferences settings = getPreferences(Context.MODE_PRIVATE);
+    credential.setSelectedAccountName(settings.getString(PREF_ACCOUNT_NAME, null));
+    // Tasks client
+    service =
+        new com.google.api.services.tasks.Tasks.Builder(httpTransport, jsonFactory, credential)
+            .setApplicationName("Google-TasksAndroidSample/1.0").build();
+  }
+  
+  
+  
