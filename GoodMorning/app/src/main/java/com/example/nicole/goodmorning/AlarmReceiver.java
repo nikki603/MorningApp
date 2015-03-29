@@ -2,6 +2,7 @@ package com.example.nicole.goodmorning;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.RingtoneManager;
@@ -33,6 +34,9 @@ public class AlarmReceiver extends Activity {
             public boolean onTouch(View arg0, MotionEvent arg1) {
                 mMediaPlayer.stop();
                 finish();
+                //Starting a new Intent
+                Intent nextScreen = new Intent(getApplicationContext(), SecondScreenActivity.class);
+                startActivity(nextScreen);
                 return false;
             }
         });

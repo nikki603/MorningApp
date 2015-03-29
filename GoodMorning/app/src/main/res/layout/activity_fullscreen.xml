@@ -56,13 +56,6 @@
             android:onClick="onToggleClicked"
             android:layout_gravity="left|center_vertical" />
 
-
     </FrameLayout>
-
-    <Button
-        android:id="@+id/stopAlarm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stop_alarm" />
 
 </FrameLayout>

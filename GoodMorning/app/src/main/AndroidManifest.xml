@@ -23,6 +23,7 @@
 
         <!-- This activity is the activity that will be launched by the alarm -->
         <activity android:name="AlarmReceiver" />
+        <activity android:name=".SecondScreenActivity" />
 
 
     </application>
