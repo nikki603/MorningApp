@@ -5,21 +5,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".EventList$PlaceholderFragment"
-    android:background="#ff260e64"
+    android:background="#ffa90154"
     android:clickable="true"
     android:longClickable="false"
     android:onClick="setContentView"
     >
-    <TextView android:text="Here are your events scheduled for today:"
-        android:textColor="#ffffb02f"
-        android:textSize="48px"
+    <TextView android:text="Events for Today"
+        android:textColor="#ffebfff8"
+        android:textSize="80px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/header"
-        android:textStyle="bold|italic" />
+        android:textStyle="italic"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:textColor="#ffffb02f"
+    <TextView
+        android:textColor="#ffebfff8"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,14 +30,16 @@
         android:ems="10"
         android:id="@+id/editText"
         android:text="9:10 am - Calc. 2"
+        android:textSize="50px"
+        android:backgroundTint="#ffffffff"
+        android:editable="false"
         android:layout_below="@+id/header"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
-        android:textSize="40px"
-        android:backgroundTint="#ffffffff" />
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignStart="@+id/editText2"
+        android:layout_marginTop="28dp" />
 
-    <EditText
-        android:textColor="#ffffb02f"
+    <TextView
+        android:textColor="#ffebfff8"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,49 +48,38 @@
         android:id="@+id/editText2"
         android:text="12:15 pm - Eng. 101"
         android:layout_marginTop="36dp"
+        android:textSize="50px"
+        android:backgroundTint="#ffffff"
         android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:textSize="40px"
-        android:backgroundTint="#ffffff" />
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_alignStart="@+id/editText3"
+        android:shadowColor="#ff59ffe8" />
 
-    <EditText
-        android:textColor="#ffffb02f"
+    <TextView
+        android:textColor="#ffebfff8"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/editText3"
-        android:text="1:30 pm - Calc. Recitation"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:textSize="40px"
-        android:backgroundTint="#ffffffff" />
+        android:text="1:30 pm - Lunch with WICS"
+        android:textSize="50px"
+        android:backgroundTint="#ffffffff"
+        android:layout_below="@+id/editText2"
+        android:layout_alignRight="@+id/header"
+        android:layout_alignEnd="@+id/header"
+        android:layout_marginTop="38dp" />
 
-    <EditText
-        android:textColor="#ffffb02f"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/editText4"
-        android:text="5:00 pm - Physics"
-        android:layout_below="@+id/editText3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
-        android:textSize="40px"
-        android:backgroundTint="#ffffffff" />
-
-    <EditText
+    <TextView
         android:textSize="48px"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#ffffb02f"
+        android:textColor="#ffebfff8"
+
         android:id="@+id/editText5"
-        android:text="Monday, March 30: Rainy, 19C"
+        android:text="Rainy, 19C"
         android:password="false"
         android:selectAllOnFocus="false"
         android:singleLine="false"
@@ -93,30 +87,64 @@
         android:textStyle="italic"
         android:orientation="vertical"
 
-        android:layout_below="@+id/editText4"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/imageView"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
         android:id="@+id/imageView"
         android:backgroundTintMode="screen"
         android:clickable="false"
-        android:background="#fffffac6"
+        android:background="#fffffd65"
         android:src="@mipmap/ic_launcher"
-        android:layout_below="@+id/editText5"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Good Morning!"
         android:id="@+id/textView"
-        android:textSize="20dp"
+        android:textSize="19dp"
+        android:textColor="#ff50a050"
         android:layout_alignTop="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+
+    <TextView
+        android:textColor="#ffebfff8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/textView2"
+        android:text="5:00pm - Physics"
+        android:textSize="50px"
+        android:backgroundTint="#ffffffff"
+        android:layout_above="@+id/editText5"
+
+        android:layout_alignRight="@+id/editText3"
+        android:layout_alignEnd="@+id/editText3"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:text="March 30"
+        android:layout_below="@+id/header"
         android:layout_alignLeft="@+id/editText5"
         android:layout_alignStart="@+id/editText5"
-        android:textColor="#ff75cf60" />
+        android:textColor="#ff8bfff4"
+        android:backgroundTint="#fffffefa"
+        android:textSize="48px"
+        android:textStyle="italic" />
 
 
 </RelativeLayout>
