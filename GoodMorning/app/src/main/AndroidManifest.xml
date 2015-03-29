@@ -3,6 +3,7 @@
     package="com.example.nicole.goodmorning" >
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-sdk android:minSdkVersion="21"></uses-sdk>
 
     <application
         android:allowBackup="true"

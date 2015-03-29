@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:background="#0099cc"
-    tools:context=".AlarmActivity">
+    tools:context=".AlarmActivity" android:elevation="0sp">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
@@ -14,7 +14,8 @@
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
     <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        android:elevation="3dp">
 
         <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -23,38 +24,54 @@
             tools:ignore="UselessParent">
         </LinearLayout>
 
-        <!--Alarm Time chooser -->
-        <TimePicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/alarmTimePicker"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
 
-        <!--Alarm On/Off button -->
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                card_view:cardCornerRadius="4sp"
+                card_view:cardBackgroundColor="#464646"
+                card_view:cardElevation="7sp">
 
-        <!-- Alarm text message -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
-            android:id="@+id/alarmText"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="200dp"
-            android:layout_below="@+id/alarmToggle"
-            android:layout_marginLeft="20dp" />
+                <!--Alarm Time chooser -->
+                <TimePicker
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/alarmTimePicker"
+                    android:textSize="70sp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
 
-        <ToggleButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alarm On/Off"
-            android:id="@+id/alarmToggle"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/alarmTimePicker"
-            android:onClick="onToggleClicked"
-            android:layout_gravity="left|center_vertical" />
+                <!-- Alarm text message -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text=""
+                    android:id="@+id/alarmText"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="200dp"
+                    android:layout_below="@+id/alarmToggle"
+                    android:layout_marginLeft="20dp" />
+
+                <!--Alarm On/Off button -->
+                <ToggleButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alarm On/Off"
+                    android:id="@+id/alarmToggle"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/alarmTimePicker"
+                    android:onClick="onToggleClicked"
+                    android:layout_gravity="right|center_vertical" />
+            </android.support.v7.widget.CardView>
+
+
 
     </FrameLayout>
 

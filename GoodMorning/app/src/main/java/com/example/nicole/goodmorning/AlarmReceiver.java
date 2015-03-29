@@ -37,6 +37,7 @@ public class AlarmReceiver extends Activity {
                 //Starting a new Intent
                 Intent nextScreen = new Intent(getApplicationContext(), SecondScreenActivity.class);
                 startActivity(nextScreen);
+
                 return false;
             }
         });
