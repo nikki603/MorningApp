@@ -3,6 +3,8 @@
     package="com.example.nicole.goodmorning" >
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+
     <uses-sdk android:minSdkVersion="21"></uses-sdk>
 
     <application
