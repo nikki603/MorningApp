@@ -42,7 +42,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/alarmTimePicker"
-                    android:textSize="70sp"
+                    android:textSize="70dp"
+                    android:headerBackground="#ffc04c"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true" />
 
@@ -63,6 +64,7 @@
                 <ToggleButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="50dp"
                     android:text="Alarm On/Off"
                     android:id="@+id/alarmToggle"
                     android:layout_centerHorizontal="true"
