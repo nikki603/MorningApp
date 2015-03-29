@@ -32,14 +32,6 @@
             android:layout_centerHorizontal="true" />
 
         <!--Alarm On/Off button -->
-        <ToggleButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alarm On/Off"
-            android:id="@+id/alarmToggle"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/alarmTimePicker"
-            android:onClick="onToggleClicked" />
 
         <!-- Alarm text message -->
         <TextView
@@ -50,8 +42,19 @@
             android:id="@+id/alarmText"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/alarmToggle" />
+            android:layout_marginTop="200dp"
+            android:layout_below="@+id/alarmToggle"
+            android:layout_marginLeft="20dp" />
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alarm On/Off"
+            android:id="@+id/alarmToggle"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/alarmTimePicker"
+            android:onClick="onToggleClicked"
+            android:layout_gravity="left|center_vertical" />
     </FrameLayout>
 
 </FrameLayout>
