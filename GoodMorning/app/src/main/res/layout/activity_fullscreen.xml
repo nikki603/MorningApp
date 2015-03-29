@@ -56,16 +56,13 @@
             android:onClick="onToggleClicked"
             android:layout_gravity="left|center_vertical" />
 
-        <Button
-            android:id="@+id/alarm_screen_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:text="Dismiss"
-            android:textSize="38dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="220dp" />
+
     </FrameLayout>
+
+    <Button
+        android:id="@+id/stopAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_alarm" />
 
 </FrameLayout>
