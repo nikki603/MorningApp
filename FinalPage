@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".EventList$PlaceholderFragment"
+    android:background="#ff260e64"
+    android:clickable="true"
+    android:longClickable="false"
+    android:onClick="setContentView"
+    >
+    <TextView android:text="Here are your events scheduled for today:"
+        android:textColor="#ffffb02f"
+        android:textSize="48px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/header"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:textColor="#ffffb02f"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:text="9:10 am - Calc. 2"
+        android:layout_below="@+id/header"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:textSize="40px"
+        android:backgroundTint="#ffffffff" />
+
+    <EditText
+        android:textColor="#ffffb02f"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:text="12:15 pm - Eng. 101"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:textSize="40px"
+        android:backgroundTint="#ffffff" />
+
+    <EditText
+        android:textColor="#ffffb02f"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:text="1:30 pm - Calc. Recitation"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignStart="@+id/editText2"
+        android:textSize="40px"
+        android:backgroundTint="#ffffffff" />
+
+    <EditText
+        android:textColor="#ffffb02f"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:text="5:00 pm - Physics"
+        android:layout_below="@+id/editText3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:textSize="40px"
+        android:backgroundTint="#ffffffff" />
+
+    <EditText
+        android:textSize="48px"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffb02f"
+        android:id="@+id/editText5"
+        android:text="Monday, March 30: Rainy, 19C"
+        android:password="false"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textColorHighlight="#fffffefc"
+        android:textStyle="italic"
+        android:orientation="vertical"
+
+        android:layout_below="@+id/editText4"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView"
+        android:backgroundTintMode="screen"
+        android:clickable="false"
+        android:background="#fffffac6"
+        android:src="@mipmap/ic_launcher"
+        android:layout_below="@+id/editText5"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Good Morning!"
+        android:id="@+id/textView"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_alignLeft="@+id/editText5"
+        android:layout_alignStart="@+id/editText5"
+        android:textColor="#ff75cf60" />
+
+
+</RelativeLayout>
