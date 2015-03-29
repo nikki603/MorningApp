@@ -1,14 +1,23 @@
 package com.example.nicole.goodmorning;
 
-import com.example.nicole.goodmorning.util.SystemUiHider;
-
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.ToggleButton;
+
+import com.example.nicole.goodmorning.util.SystemUiHider;
+
+import java.util.Calendar;
 
 
 /**
@@ -45,6 +54,27 @@ public class FullscreenActivity extends Activity {
      * The instance of the {@link SystemUiHider} for this activity.
      */
     private SystemUiHider mSystemUiHider;
+    AlarmManager alarmManager;
+    private PendingIntent pendingIntent;
+    private TimePicker alarmTimePicker;
+    private static AlarmActivity inst;
+    private TextView alarmTextView;
+
+    public void onToggleClicked(View view) {
+        if (((ToggleButton) view).isChecked()) {
+            Log.d("MyActivity", "Alarm On");
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.HOUR_OF_DAY, alarmTimePicker.getCurrentHour());
+            calendar.set(Calendar.MINUTE, alarmTimePicker.getCurrentMinute());
+            Intent myIntent = new Intent(FullscreenActivity.this, AlarmReceiver.class);
+            pendingIntent = PendingIntent.getBroadcast(FullscreenActivity.this, 0, myIntent, 0);
+            alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+        } else {
+            alarmManager.cancel(pendingIntent);
+            setAlarmText("");
+            Log.d("MyActivity", "Alarm Off");
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +142,7 @@ public class FullscreenActivity extends Activity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+        //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
     }
 
     @Override
@@ -156,5 +186,9 @@ public class FullscreenActivity extends Activity {
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
+    }
+
+    public void setAlarmText(String alarmText) {
+        alarmTextView.setText(alarmText);
     }
 }
