@@ -3,6 +3,7 @@ package com.example.nicole.goodmorning;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
@@ -49,8 +50,8 @@ public class SecondScreenActivity extends Activity {
         String selection = "((" + CalendarContract.Calendars.ACCOUNT_NAME + " = ?) AND ("
                 + CalendarContract.Calendars.ACCOUNT_TYPE + " = ?) AND ("
                 + CalendarContract.Calendars.OWNER_ACCOUNT + " = ?))";
-        String[] selectionArgs = new String[] {"nicole.sands@gmail.com", "com.google",
-                "nicole.sands@gmail.com"};
+        String[] selectionArgs = new String[] {"test@gmail.com", "com.google",
+                "test@gmail.com"};
 // Submit the query and get a Cursor object back.
         cur = cr.query(uri, EVENT_PROJECTION, selection, selectionArgs, null);
 
@@ -76,6 +77,12 @@ public class SecondScreenActivity extends Activity {
 
         Log.d("MyActivity", "Get 3 events");
         getLastThreeEvents();
+
+        //Weather
+        TextView weatherIcon = (TextView) findViewById(R.id.custom_font);
+        Typeface weatherFont = Typeface.createFromAsset(getAssets(), "fonts/weather.ttf");
+        weatherIcon.setTypeface(weatherFont);
+        weatherIcon.setText(getString(R.string.weather_drizzle));
 
     }
 
@@ -121,12 +128,12 @@ public class SecondScreenActivity extends Activity {
             Log.d("Event ", "Event: "+title + " " + startDate);
 
             // Do something with the values...
-            l_displayText.append("Event " + l_cnt + " " + title + " " + getDateTimeStr(startDate) + "\n----------------\n");
+            l_displayText.append(title + "\n " + getDateTimeStr(startDate) + "\n\n");
             ++l_cnt;
         }
 
         dataTextView = (TextView) findViewById(R.id.data);
-        dataTextView.setText("LIST \n " + l_displayText);
+        dataTextView.setText(l_displayText);
 
 
     }

@@ -3,12 +3,15 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:gravity="center" >
+    android:gravity="center"
+    android:background="@drawable/coffee">
 
     <Button
         android:id="@+id/stopAlarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/stop_alarm" />
+        android:text="@string/stop_alarm"
+        android:textSize="40dp"
+        android:padding="30dp" />
 
 </RelativeLayout>
