@@ -3,4 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="alarm_hello">The alarm will start in 15 seconds.</string>
     <string name="stop_alarm">Stop Alarm</string>
+
+    <!--Weather-->
+    <string name="weather_drizzle">&#xf01c;</string>
 </resources>
